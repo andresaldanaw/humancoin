@@ -67,11 +67,11 @@ $mov = $db->prepare(
        FROM transacciones t
        LEFT JOIN usuarios o ON o.id = t.origen_id
        LEFT JOIN usuarios d ON d.id = t.destino_id
-      WHERE t.origen_id = :id OR t.destino_id = :id
+      WHERE t.origen_id = :origen OR t.destino_id = :destino
       ORDER BY t.id DESC
       LIMIT 40'
 );
-$mov->execute([':id' => $yo['id']]);
+$mov->execute([':origen' => $yo['id'], ':destino' => $yo['id']]);
 $movimientos = $mov->fetchAll();
 
 /* Directorio de personas para enviar */
@@ -90,8 +90,9 @@ $totalGente    = (int) $db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn(
 <title>Mi cartera · Human Coins</title>
 <meta name="theme-color" content="#EFE9DC">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="iconos/icono-192.jpg" type="image/png">
-<link rel="apple-touch-icon" href="iconos/apple-touch-icon.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="iconos/icono-192.png" type="image/png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Human Coins">
 <link rel="preconnect" href="https://fonts.googleapis.com">

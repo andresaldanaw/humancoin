@@ -10,7 +10,8 @@ $actualizado = '16 de noviembre de 2026';
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacidad · Human Coins</title>
 <meta name="theme-color" content="#EFE9DC">
-<link rel="icon" href="iconos/icono-192.jpg" type="image/jpeg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="iconos/icono-192.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,19 +40,21 @@ $actualizado = '16 de noviembre de 2026';
 
   <section class="block">
     <h2>Quién responde por tus datos</h2>
-    <p>El responsable del tratamiento es la <strong>Fundación Corre La Voz</strong>, con domicilio en Bogotá D.C., Colombia. Para cualquier asunto relacionado con tus datos puedes escribir a <strong>info@correlavoz.org</strong>.</p>
+    <p>El responsable del tratamiento es la <strong>Fundación Corre La Voz</strong>, con domicilio en Bogotá D.C., Colombia. Puedes conocer la fundación y sus proyectos en <a href="https://correlavoz.org" target="_blank" rel="noopener">correlavoz.org</a>.</p>
+    <p>Human Coins es uno de los experimentos de la fundación: un juego sin ánimo de lucro, sin publicidad y sin venta de datos.</p>
     <p>Los servidores donde funciona este sitio están ubicados en Estados Unidos. Al crear una cuenta autorizas esa transferencia internacional de datos, en los términos del artículo 26 de la Ley 1581 de 2012.</p>
   </section>
 
   <section class="block">
     <h2>Qué guardamos</h2>
     <ul class="pairs">
-      <li><span>El nombre que escribas</span><strong>visible</strong></li>
-      <li><span>Tu nombre de usuario</span><strong>visible</strong></li>
-      <li><span>Tu PIN de 4 números</span><strong>cifrado</strong></li>
-      <li><span>Tu saldo y tus movimientos</span><strong>privado</strong></li>
-      <li><span>La dirección IP del registro</span><strong>privado</strong></li>
-      <li><span>Fecha de creación de la cuenta</span><strong>privado</strong></li>
+      <li><span>El nombre con el que te presentas</span><strong>lo ven los demás</strong></li>
+      <li><span>Tu nombre de usuario</span><strong>lo ven los demás</strong></li>
+      <li><span>El motivo que escribes al enviar monedas</span><strong>se publica sin tu nombre</strong></li>
+      <li><span>Tu PIN de 4 números</span><strong>cifrado, nadie lo ve</strong></li>
+      <li><span>Tu saldo y tus movimientos</span><strong>solo tú y quien te envió</strong></li>
+      <li><span>La dirección IP desde la que te registras</span><strong>no se muestra nunca</strong></li>
+      <li><span>La fecha en que creaste la cuenta</span><strong>no se muestra nunca</strong></li>
     </ul>
     <p class="hint">No pedimos correo, teléfono, documento, dirección ni fecha de nacimiento. No usamos cookies de publicidad ni servicios de analítica de terceros. La única cookie que existe es la de sesión, que mantiene tu cartera abierta mientras navegas.</p>
   </section>
@@ -78,7 +81,7 @@ $actualizado = '16 de noviembre de 2026';
   <section class="block">
     <h2>Tus derechos</h2>
     <p>La Ley 1581 de 2012 te reconoce, entre otros, el derecho a conocer, actualizar y rectificar tus datos; a solicitar prueba de la autorización que diste; a ser informado del uso que se les ha dado; a presentar quejas ante la Superintendencia de Industria y Comercio; y a revocar la autorización o solicitar la supresión de tus datos cuando no exista un deber legal de conservarlos.</p>
-    <p>Para ejercer cualquiera de ellos escribe a <strong>info@correlavoz.org</strong> indicando tu nombre de usuario y qué solicitas. Responderemos en los plazos de ley: quince días hábiles para consultas y quince días hábiles para reclamos, prorrogables conforme a la norma.</p>
+    <p>Para ejercer cualquiera de ellos puedes contactarnos a través de los canales publicados en <a href="https://correlavoz.org" target="_blank" rel="noopener">correlavoz.org</a>, indicando tu nombre de usuario y qué solicitas. Responderemos en los plazos de ley: quince días hábiles para consultas y quince días hábiles para reclamos, prorrogables conforme a la norma.</p>
     <p class="hint">Si pides que borremos tu cuenta, eliminamos tu nombre, tu usuario, tu PIN y tu IP. Los movimientos en los que participaste se conservan sin ningún dato que te identifique, porque forman parte del registro contable del juego y borrarlos descuadraría los saldos de otras personas.</p>
   </section>
 

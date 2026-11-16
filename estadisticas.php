@@ -199,8 +199,9 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 <meta name="theme-color" content="#EFE9DC">
 <meta name="description" content="Qué hace la gente cuando todos empiezan con la misma cantidad de monedas. Datos anónimos y abiertos.">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="iconos/icono-192.jpg" type="image/jpeg">
-<link rel="apple-touch-icon" href="iconos/apple-touch-icon.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="iconos/icono-192.png" type="image/png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -246,12 +247,7 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 
   <section class="block">
     <h2>Todavía no hay datos suficientes</h2>
-    <p>El resto del tablero se abre cuando haya al menos <?= MINIMO_PERSONAS ?> personas jugando. Hoy hay <?= $personas ?>.</p>
-    <p class="hint">No es un capricho. Con un grupo pequeño, decir "el saldo más alto es 1.400" equivale a señalar a alguien con el dedo, y prometimos que esto fuera anónimo. Con suficiente gente los números dejan de apuntar a personas y empiezan a decir algo sobre todos.</p>
-    <div class="bar-track" style="margin-top:18px">
-      <div class="bar-fill" style="width: <?= min(100, round($personas * 100 / MINIMO_PERSONAS)) ?>%"></div>
-    </div>
-    <p class="bar-note"><?= $personas ?> de <?= MINIMO_PERSONAS ?></p>
+    <p>Vuelve pronto: cuando haya más movimiento, aquí aparece qué estamos haciendo con las monedas.</p>
     <button type="button" class="primary-btn" id="compartir" data-url="<?= esc($urlSitio) ?>">Invitar a más gente</button>
     <div class="send-feedback" id="compartirAviso"></div>
   </section>

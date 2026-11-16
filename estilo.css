@@ -653,3 +653,46 @@ select.text-input {
 
 .foot-note a { color: var(--ink-soft); }
 .foot-note a:hover { color: var(--ink); }
+
+/* Enlaces: color del texto, solo subrayado */
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--line);
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.foot-note a { color: inherit; }
+.foot-note a:hover { color: inherit; }
+
+/* Explicación plegable del inicio */
+
+.explica-toggle {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+
+.explica-toggle:hover { color: var(--ink); }
+.explica-toggle:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+.explica.cerrada,
+.privacidad.cerrada { display: none; }

@@ -107,8 +107,9 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 <title>Human Coins</title>
 <meta name="theme-color" content="#EFE9DC">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="iconos/icono-192.jpg" type="image/png">
-<link rel="apple-touch-icon" href="iconos/apple-touch-icon.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="iconos/icono-192.png" type="image/png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Human Coins">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,13 +128,18 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
   <div class="intro">
     <img class="hero-coin" src="moneda.webp" alt="Human Coin">
     <h1 class="serif">Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas.</h1>
-    <p>Human Coins es un juego. Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y no se pueden crear más allá de los participantes. La idea es intercambiarlas por lo que quieran, en el mundo real o digital. Lo que quiero ver es qué hacemos con una riqueza convencional (como lo es todo el dinero a fin de cuentas).</p>
-    <p>¿Quiénes acumulan? ¿Quiénes regalan todo el primer día? ¿Favores, deudas, mercados? Eso es lo que quiero ver. Pueden invitar a quien quieran.</p>
+
+    <button type="button" class="explica-toggle" id="explicaToggle" hidden aria-expanded="false" aria-controls="explica">¿Qué es esto?</button>
+
+    <div id="explica" class="explica">
+      <p>Human Coins es un juego. Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y no se pueden crear más allá de los participantes. La idea es intercambiarlas por lo que quieran, en el mundo real o digital. Lo que quiero ver es qué hacemos con una riqueza convencional (como lo es todo el dinero a fin de cuentas).</p>
+      <p>¿Quiénes acumulan? ¿Quiénes regalan todo el primer día? ¿Favores, deudas, mercados? Eso es lo que quiero ver. Pueden invitar a quien quieran.</p>
+    </div>
 
     <button type="button" class="primary-btn" id="compartir" data-url="<?= esc($urlSitio) ?>">Invitar a alguien</button>
     <div class="send-feedback" id="compartirAviso"></div>
 
-    <p class="privacidad">Los movimientos se muestran de forma anónima en el tablero: se ve cuánto se mueve y para qué, nunca quién le envió a quién. Lo único que guardamos aparte es la dirección IP desde la que se crea cada cuenta, y solo para que una misma persona no abra muchas carteras.<?php if ($total > 0): ?> Ya <?= $total === 1 ? 'hay una persona jugando' : 'hay ' . $total . ' personas jugando' ?>.<?php endif; ?></p>
+    <p class="privacidad explica-extra">Los movimientos se muestran de forma anónima en el tablero: se ve cuánto se mueve y para qué, nunca quién le envió a quién. Lo único que guardamos aparte es la dirección IP desde la que se crea cada cuenta, y solo para que una misma persona no abra muchas carteras.<?php if ($total > 0): ?> Ya <?= $total === 1 ? 'hay una persona jugando' : 'hay ' . $total . ' personas jugando' ?>.<?php endif; ?></p>
   </div>
 
   <div class="entry-card">
@@ -197,6 +203,32 @@ document.querySelectorAll('.tab').forEach(function (b) {
     document.getElementById(b.dataset.pane).classList.add('on');
   });
 });
+(function () {
+  var caja = document.getElementById('explica');
+  var btn = document.getElementById('explicaToggle');
+  var extra = document.querySelector('.explica-extra');
+  if (!caja || !btn) { return; }
+
+  var visto = false;
+  try { visto = localStorage.getItem('hc_intro_visto') === '1'; } catch (e) {}
+
+  function plegar(cerrado) {
+    caja.classList.toggle('cerrada', cerrado);
+    if (extra) { extra.classList.toggle('cerrada', cerrado); }
+    btn.setAttribute('aria-expanded', cerrado ? 'false' : 'true');
+    btn.textContent = cerrado ? '¿Qué es esto?' : 'Ocultar';
+  }
+
+  btn.hidden = false;
+  plegar(visto);
+
+  btn.addEventListener('click', function () {
+    plegar(!caja.classList.contains('cerrada'));
+  });
+
+  try { localStorage.setItem('hc_intro_visto', '1'); } catch (e) {}
+})();
+
 (function () {
   var b = document.getElementById('compartir');
   if (!b) { return; }

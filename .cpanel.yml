@@ -9,12 +9,13 @@ deployment:
     - /bin/cp salir.php $DESTINO/salir.php
     - /bin/cp config.php $DESTINO/config.php
     - /bin/cp credenciales-ejemplo.php $DESTINO/credenciales-ejemplo.php
-    - /bin/cp instalar.php $DESTINO/instalar.php
+    - /bin/cp privacidad.php $DESTINO/privacidad.php
+    - /bin/cp favicon.ico $DESTINO/favicon.ico
     - /bin/cp estilo.css $DESTINO/estilo.css
     - /bin/cp sw.js $DESTINO/sw.js
     - /bin/cp manifest.json $DESTINO/manifest.json
     - /bin/cp moneda.webp $DESTINO/moneda.webp
-    - /bin/cp iconos/icono-192.jpg $DESTINO/iconos/icono-192.jpg
-    - /bin/cp iconos/icono-512.jpg $DESTINO/iconos/icono-512.jpg
-    - /bin/cp iconos/icono-maskable-512.jpg $DESTINO/iconos/icono-maskable-512.jpg
-    - /bin/cp iconos/apple-touch-icon.jpg $DESTINO/iconos/apple-touch-icon.jpg
+    - /bin/cp iconos/icono-192.png $DESTINO/iconos/icono-192.png
+    - /bin/cp iconos/icono-512.png $DESTINO/iconos/icono-512.png
+    - /bin/cp iconos/icono-maskable-512.png $DESTINO/iconos/icono-maskable-512.png
+    - /bin/cp iconos/apple-touch-icon.png $DESTINO/iconos/apple-touch-icon.png

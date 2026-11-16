@@ -2,16 +2,17 @@
    Solo cachea lo estático. Las páginas con saldos van siempre a la red,
    para que nadie vea un saldo viejo. */
 
-const CACHE = 'human-coins-v1';
+const CACHE = 'human-coins-v2';
 
 const ESTATICOS = [
   'estilo.css',
   'moneda.webp',
   'manifest.json',
-  'iconos/icono-192.jpg',
-  'iconos/icono-512.jpg',
-  'iconos/icono-maskable-512.jpg',
-  'iconos/apple-touch-icon.jpg'
+  'favicon.ico',
+  'iconos/icono-192.png',
+  'iconos/icono-512.png',
+  'iconos/icono-maskable-512.png',
+  'iconos/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', function (e) {
