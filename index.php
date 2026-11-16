@@ -126,10 +126,9 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 
   <div class="intro">
     <img class="hero-coin" src="moneda.webp" alt="Human Coin">
-    <h1 class="serif">Todos empezamos con lo mismo. La pregunta es qué hacemos después.</h1>
-    <p>Human Coins es un juego. Cada persona que entra recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y nadie puede crear ni una más. Desde ahí, lo único que se puede hacer es dárselas a otra persona y decir por qué.</p>
-    <p>Lo interesante no son las monedas: es lo que pasa cuando el punto de partida es igual para todos. ¿Aparecen quienes acumulan? ¿Quienes regalan todo el primer día? ¿Se forman favores, deudas, mercados? Eso es lo que queremos ver, y solo funciona si somos muchos.</p>
-    <p><strong>Invita a quien quieras.</strong> Entre más personas jueguen, más dice el experimento.</p>
+    <h1 class="serif">Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas.</h1>
+    <p>Human Coins es un juego. Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y no se pueden crear más allá de los participantes. La idea es intercambiarlas por lo que quieran, en el mundo real o digital. Lo que quiero ver es qué hacemos con una riqueza convencional (como lo es todo el dinero a fin de cuentas).</p>
+    <p>¿Quiénes acumulan? ¿Quiénes regalan todo el primer día? ¿Favores, deudas, mercados? Eso es lo que quiero ver. Pueden invitar a quien quieran.</p>
 
     <button type="button" class="primary-btn" id="compartir" data-url="<?= esc($urlSitio) ?>">Invitar a alguien</button>
     <div class="send-feedback" id="compartirAviso"></div>
