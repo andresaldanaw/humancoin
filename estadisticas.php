@@ -398,8 +398,7 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 <?php endif; ?>
 
   <p class="foot-note">
-    <a href="index.php">Ir a Human Coins</a> &middot; <a href="privacidad.php">Privacidad</a><br>
-    Las monedas no tienen valor monetario. Nadie puede crear monedas nuevas.
+    <a href="index.php">Ir a Human Coins</a> &middot; <a href="privacidad.php">Privacidad</a>
   </p>
 
 </div>

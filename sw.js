@@ -2,7 +2,7 @@
    Solo cachea lo estático. Las páginas con saldos van siempre a la red,
    para que nadie vea un saldo viejo. */
 
-const CACHE = 'human-coins-v2';
+const CACHE = 'human-coins-v3';
 
 const ESTATICOS = [
   'estilo.css',
@@ -62,7 +62,24 @@ self.addEventListener('fetch', function (e) {
     return;
   }
 
-  /* Lo estático: del caché primero */
+  /* Estilos, scripts y manifiesto: la red manda, el cache es solo respaldo.
+     Si no fuera asi, un cambio de diseno nunca llegaria a quien ya visito. */
+  if (/\.(css|js|json)$/.test(url.pathname)) {
+    e.respondWith(
+      fetch(req).then(function (res) {
+        if (res && res.status === 200) {
+          const copia = res.clone();
+          caches.open(CACHE).then(function (c) { c.put(req, copia); });
+        }
+        return res;
+      }).catch(function () {
+        return caches.match(req);
+      })
+    );
+    return;
+  }
+
+  /* Imagenes y demas: del cache primero, que no cambian */
   e.respondWith(
     caches.match(req).then(function (hit) {
       return hit || fetch(req).then(function (res) {

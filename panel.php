@@ -4,10 +4,12 @@ $yo = exigir_sesion($db);
 
 $error = '';
 $exito = '';
+$destinoPrevio = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && token_valido() && ($_POST['accion'] ?? '') === 'enviar') {
 
     $destino   = strtolower(trim($_POST['destino'] ?? ''));
+    $destinoPrevio = $destino;
     $monto     = (int) ($_POST['monto'] ?? 0);
     $categoria = trim($_POST['categoria'] ?? '');
     $nota      = trim($_POST['nota'] ?? '');
@@ -53,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && token_valido() && ($_POST['accion']
 
                 $db->commit();
 
+                $destinoPrevio = '';
                 $exito = 'Enviaste ' . $monto . ' ' . ($monto === 1 ? 'moneda' : 'monedas') . ' a ' . $otro['nombre'] . '.';
                 $yo = usuario_actual($db);
             }
@@ -74,13 +77,6 @@ $mov = $db->prepare(
 $mov->execute([':origen' => $yo['id'], ':destino' => $yo['id']]);
 $movimientos = $mov->fetchAll();
 
-/* Directorio de personas para enviar */
-$gente = $db->prepare('SELECT nombre, usuario FROM usuarios WHERE id <> ? ORDER BY nombre ASC');
-$gente->execute([$yo['id']]);
-$personas = $gente->fetchAll();
-
-$enCirculacion = (int) $db->query('SELECT COALESCE(SUM(saldo), 0) FROM usuarios')->fetchColumn();
-$totalGente    = (int) $db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -137,13 +133,10 @@ $totalGente    = (int) $db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn(
       <input type="hidden" name="accion" value="enviar">
 
       <div>
-        <label class="field-label" for="destino">Para quién</label>
-        <select class="text-input" id="destino" name="destino" required>
-          <option value="">Elige a una persona</option>
-          <?php foreach ($personas as $p): ?>
-            <option value="<?= esc($p['usuario']) ?>"><?= esc($p['nombre']) ?> (@<?= esc($p['usuario']) ?>)</option>
-          <?php endforeach; ?>
-        </select>
+        <label class="field-label" for="destino">Para quién <span class="hint-inline">escribe su usuario</span></label>
+        <input class="text-input" id="destino" name="destino" type="text" maxlength="20"
+               autocomplete="off" autocapitalize="none" spellcheck="false"
+               placeholder="usuario" value="<?= esc($destinoPrevio) ?>" required>
       </div>
 
       <div>
@@ -208,11 +201,6 @@ $totalGente    = (int) $db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn(
       <?php endforeach; ?>
     <?php endif; ?>
   </section>
-
-  <p class="hint">
-    Hay <?= number_format($enCirculacion, 0, ',', '.') ?> monedas en circulación entre <?= $totalGente ?> <?= $totalGente === 1 ? 'persona' : 'personas' ?>.
-    Nadie puede crear monedas nuevas: solo entran al mundo cuando entra una persona más.
-  </p>
 
   <p class="foot-note">
     <a href="estadisticas.php">Tablero</a> &middot; <a href="privacidad.php">Privacidad</a>

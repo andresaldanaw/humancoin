@@ -132,14 +132,14 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
     <button type="button" class="explica-toggle" id="explicaToggle" hidden aria-expanded="false" aria-controls="explica">¿Qué es esto?</button>
 
     <div id="explica" class="explica">
-      <p>Human Coins es un juego. Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y no se pueden crear más allá de los participantes. La idea es intercambiarlas por lo que quieran, en el mundo real o digital. Lo que quiero ver es qué hacemos con una riqueza convencional (como lo es todo el dinero a fin de cuentas).</p>
-      <p>¿Quiénes acumulan? ¿Quiénes regalan todo el primer día? ¿Favores, deudas, mercados? Eso es lo que quiero ver. Pueden invitar a quien quieran.</p>
+      <p>Human Coins es un juego. Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y no se pueden crear más allá de los participantes. La idea es intercambiarlas por lo que quieran, en el mundo real o digital. Lo que queremos ver es qué hacemos con una riqueza convencional (como lo es todo el dinero a fin de cuentas).</p>
+      <p>¿Quiénes acumulan? ¿Quiénes regalan todo el primer día? ¿Favores, deudas, mercados? Eso es lo que queremos ver. Pueden invitar a quien quieran.</p>
     </div>
 
     <button type="button" class="primary-btn" id="compartir" data-url="<?= esc($urlSitio) ?>">Invitar a alguien</button>
     <div class="send-feedback" id="compartirAviso"></div>
 
-    <p class="privacidad explica-extra">Los movimientos se muestran de forma anónima en el tablero: se ve cuánto se mueve y para qué, nunca quién le envió a quién. Lo único que guardamos aparte es la dirección IP desde la que se crea cada cuenta, y solo para que una misma persona no abra muchas carteras.<?php if ($total > 0): ?> Ya <?= $total === 1 ? 'hay una persona jugando' : 'hay ' . $total . ' personas jugando' ?>.<?php endif; ?></p>
+    <p class="privacidad explica-extra">Los movimientos se muestran de forma anónima en el tablero: se ve cuánto se mueve y para qué, nunca quién le envió a quién. Lo único que guardamos aparte es la dirección IP desde la que se crea cada cuenta, y solo para que una misma persona no abra muchas carteras.</p>
   </div>
 
   <div class="entry-card">
@@ -188,8 +188,7 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
   </div>
 
   <p class="foot-note">
-    <a href="estadisticas.php">Ver el tablero del experimento</a> &middot; <a href="privacidad.php">Privacidad</a><br>
-    Las monedas no tienen valor monetario.
+    <a href="estadisticas.php">Ver el tablero del experimento</a> &middot; <a href="privacidad.php">Privacidad</a>
   </p>
 
 </div>

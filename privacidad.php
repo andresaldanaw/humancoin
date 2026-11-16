@@ -102,8 +102,7 @@ $actualizado = '16 de noviembre de 2026';
   </section>
 
   <p class="foot-note">
-    <a href="index.php">Ir a Human Coins</a> &middot; <a href="estadisticas.php">Tablero</a><br>
-    Las monedas no tienen valor monetario.
+    <a href="index.php">Ir a Human Coins</a> &middot; <a href="estadisticas.php">Tablero</a>
   </p>
 
 </div>
