@@ -1,0 +1,20 @@
+---
+deployment:
+  tasks:
+    - export DESTINO=$HOME/public_html/coin.correlavoz.org
+    - /bin/mkdir -p $DESTINO/iconos
+    - /bin/cp index.php $DESTINO/index.php
+    - /bin/cp panel.php $DESTINO/panel.php
+    - /bin/cp estadisticas.php $DESTINO/estadisticas.php
+    - /bin/cp salir.php $DESTINO/salir.php
+    - /bin/cp config.php $DESTINO/config.php
+    - /bin/cp credenciales-ejemplo.php $DESTINO/credenciales-ejemplo.php
+    - /bin/cp instalar.php $DESTINO/instalar.php
+    - /bin/cp estilo.css $DESTINO/estilo.css
+    - /bin/cp sw.js $DESTINO/sw.js
+    - /bin/cp manifest.json $DESTINO/manifest.json
+    - /bin/cp moneda.webp $DESTINO/moneda.webp
+    - /bin/cp iconos/icono-192.png $DESTINO/iconos/icono-192.png
+    - /bin/cp iconos/icono-512.png $DESTINO/iconos/icono-512.png
+    - /bin/cp iconos/icono-maskable-512.png $DESTINO/iconos/icono-maskable-512.png
+    - /bin/cp iconos/apple-touch-icon.png $DESTINO/iconos/apple-touch-icon.png
