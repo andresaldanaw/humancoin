@@ -700,3 +700,17 @@ a:focus-visible {
 
 .explica.cerrada,
 .privacidad.cerrada { display: none; }
+
+/* Portada centrada */
+
+.pagina-inicio .intro { text-align: center; }
+.pagina-inicio .intro p { margin-left: auto; margin-right: auto; }
+.pagina-inicio .intro .explica p { max-width: 46ch; }
+.pagina-inicio .privacidad { max-width: 52ch; }
+
+.pista-busqueda {
+  margin: 6px 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  min-height: 1.1em;
+}

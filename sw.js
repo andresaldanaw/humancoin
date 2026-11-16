@@ -2,7 +2,7 @@
    Solo cachea lo estático. Las páginas con saldos van siempre a la red,
    para que nadie vea un saldo viejo. */
 
-const CACHE = 'human-coins-v3';
+const CACHE = 'human-coins-v4';
 
 const ESTATICOS = [
   'estilo.css',

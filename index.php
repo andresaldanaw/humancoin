@@ -117,7 +117,7 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo.css">
 </head>
-<body>
+<body class="pagina-inicio">
 
 <div class="page">
 
@@ -129,7 +129,7 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
     <img class="hero-coin" src="moneda.webp" alt="Human Coin">
     <h1 class="serif">Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas.</h1>
 
-    <button type="button" class="explica-toggle" id="explicaToggle" hidden aria-expanded="false" aria-controls="explica">¿Qué es esto?</button>
+    <button type="button" class="explica-toggle" id="explicaToggle" hidden aria-expanded="false" aria-controls="explica">¿Qué es Human Coins?</button>
 
     <div id="explica" class="explica">
       <p>Human Coins es un juego. Cada persona recibe <?= number_format(MONEDAS_INICIALES, 0, ',', '.') ?> monedas, exactamente las mismas que todos los demás, y no se pueden crear más allá de los participantes. La idea es intercambiarlas por lo que quieran, en el mundo real o digital. Lo que queremos ver es qué hacemos con una riqueza convencional (como lo es todo el dinero a fin de cuentas).</p>
@@ -215,7 +215,7 @@ document.querySelectorAll('.tab').forEach(function (b) {
     caja.classList.toggle('cerrada', cerrado);
     if (extra) { extra.classList.toggle('cerrada', cerrado); }
     btn.setAttribute('aria-expanded', cerrado ? 'false' : 'true');
-    btn.textContent = cerrado ? '¿Qué es esto?' : 'Ocultar';
+    btn.textContent = cerrado ? '¿Qué es Human Coins?' : 'Ocultar';
   }
 
   btn.hidden = false;

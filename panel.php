@@ -136,7 +136,10 @@ $movimientos = $mov->fetchAll();
         <label class="field-label" for="destino">Para quién <span class="hint-inline">escribe su usuario</span></label>
         <input class="text-input" id="destino" name="destino" type="text" maxlength="20"
                autocomplete="off" autocapitalize="none" spellcheck="false"
-               placeholder="usuario" value="<?= esc($destinoPrevio) ?>" required>
+               list="sugerencias" placeholder="Escribe su usuario"
+               value="<?= esc($destinoPrevio) ?>" required>
+        <datalist id="sugerencias"></datalist>
+        <p class="pista-busqueda" id="pistaBusqueda"></p>
       </div>
 
       <div>
@@ -209,6 +212,54 @@ $movimientos = $mov->fetchAll();
 </div>
 
 <script>
+(function () {
+  var campo = document.getElementById('destino');
+  var lista = document.getElementById('sugerencias');
+  var pista = document.getElementById('pistaBusqueda');
+  if (!campo || !lista) { return; }
+
+  var espera = null;
+  var ultimo = '';
+
+  function pintar(datos) {
+    lista.innerHTML = '';
+    datos.forEach(function (u) {
+      var o = document.createElement('option');
+      o.value = u.usuario;
+      o.label = u.nombre;
+      lista.appendChild(o);
+    });
+    if (!pista) { return; }
+    if (datos.length === 0) {
+      pista.textContent = 'Nadie coincide con eso.';
+    } else if (datos.length === 1) {
+      pista.textContent = datos[0].nombre + ' (@' + datos[0].usuario + ')';
+    } else {
+      pista.textContent = datos.length + ' coinciden. Sigue escribiendo.';
+    }
+  }
+
+  campo.addEventListener('input', function () {
+    var q = campo.value.trim().toLowerCase();
+    if (q === ultimo) { return; }
+    ultimo = q;
+
+    if (espera) { clearTimeout(espera); }
+    if (q.length < 2) {
+      lista.innerHTML = '';
+      if (pista) { pista.textContent = ''; }
+      return;
+    }
+
+    espera = setTimeout(function () {
+      fetch('buscar.php?q=' + encodeURIComponent(q), { credentials: 'same-origin' })
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(pintar)
+        .catch(function () {});
+    }, 220);
+  });
+})();
+
 (function () {
   var monto = document.getElementById('monto');
   if (monto) {
