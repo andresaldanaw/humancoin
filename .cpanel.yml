@@ -14,7 +14,7 @@ deployment:
     - /bin/cp sw.js $DESTINO/sw.js
     - /bin/cp manifest.json $DESTINO/manifest.json
     - /bin/cp moneda.webp $DESTINO/moneda.webp
-    - /bin/cp iconos/icono-192.png $DESTINO/iconos/icono-192.png
-    - /bin/cp iconos/icono-512.png $DESTINO/iconos/icono-512.png
-    - /bin/cp iconos/icono-maskable-512.png $DESTINO/iconos/icono-maskable-512.png
-    - /bin/cp iconos/apple-touch-icon.png $DESTINO/iconos/apple-touch-icon.png
+    - /bin/cp iconos/icono-192.jpg $DESTINO/iconos/icono-192.jpg
+    - /bin/cp iconos/icono-512.jpg $DESTINO/iconos/icono-512.jpg
+    - /bin/cp iconos/icono-maskable-512.jpg $DESTINO/iconos/icono-maskable-512.jpg
+    - /bin/cp iconos/apple-touch-icon.jpg $DESTINO/iconos/apple-touch-icon.jpg

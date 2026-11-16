@@ -107,8 +107,8 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
 <title>Human Coins</title>
 <meta name="theme-color" content="#EFE9DC">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="iconos/icono-192.png" type="image/png">
-<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+<link rel="icon" href="iconos/icono-192.jpg" type="image/png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.jpg">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Human Coins">
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -73,8 +73,8 @@ $topDia = max(array_column($serie, 'total'));
 <title>Tablero · Human Coins</title>
 <meta name="theme-color" content="#EFE9DC">
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="iconos/icono-192.png" type="image/png">
-<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+<link rel="icon" href="iconos/icono-192.jpg" type="image/png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">

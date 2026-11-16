@@ -8,10 +8,10 @@ const ESTATICOS = [
   'estilo.css',
   'moneda.webp',
   'manifest.json',
-  'iconos/icono-192.png',
-  'iconos/icono-512.png',
-  'iconos/icono-maskable-512.png',
-  'iconos/apple-touch-icon.png'
+  'iconos/icono-192.jpg',
+  'iconos/icono-512.jpg',
+  'iconos/icono-maskable-512.jpg',
+  'iconos/apple-touch-icon.jpg'
 ];
 
 self.addEventListener('install', function (e) {
