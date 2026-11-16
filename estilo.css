@@ -633,3 +633,23 @@ select.text-input {
 
 .bars li { margin-bottom: 22px; }
 .bar-note { margin-top: 7px; }
+
+/* Nube de palabras de los motivos */
+
+.nube {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  line-height: 1.5;
+}
+
+.nube-palabra {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--gold-deep);
+}
+
+.nube-palabra:nth-child(even) { color: var(--teal-deep); }
+
+.foot-note a { color: var(--ink-soft); }
+.foot-note a:hover { color: var(--ink); }

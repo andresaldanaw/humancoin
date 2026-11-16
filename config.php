@@ -15,6 +15,9 @@ require $archivoCredenciales;
 /* Monedas que recibe cada persona al registrarse */
 define('MONEDAS_INICIALES', 1000);
 
+/* Personas necesarias para abrir el tablero publico */
+define('MINIMO_PERSONAS', 10);
+
 session_start();
 
 try {

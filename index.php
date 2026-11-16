@@ -182,7 +182,7 @@ $urlSitio = $esquema . '://' . ($_SERVER['HTTP_HOST'] ?? 'coin.correlavoz.org') 
   </div>
 
   <p class="foot-note">
-    <a href="estadisticas.php">Ver el tablero del experimento</a><br>
+    <a href="estadisticas.php">Ver el tablero del experimento</a> &middot; <a href="privacidad.php">Privacidad</a><br>
     Las monedas no tienen valor monetario.
   </p>
 

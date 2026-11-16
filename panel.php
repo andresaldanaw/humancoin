@@ -213,6 +213,10 @@ $totalGente    = (int) $db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn(
     Nadie puede crear monedas nuevas: solo entran al mundo cuando entra una persona más.
   </p>
 
+  <p class="foot-note">
+    <a href="estadisticas.php">Tablero</a> &middot; <a href="privacidad.php">Privacidad</a>
+  </p>
+
 </div>
 
 <script>
